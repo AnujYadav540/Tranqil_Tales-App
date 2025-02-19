@@ -11,7 +11,13 @@ struct SoundSelectionView: View {
         ("Mountain Breeze", "mountain_breeze"),
         ("Gentle Stream", "gentle_stream"),
         ("Soft Piano", "soft_piano"),
-        ("Whale Songs", "whale_songs")
+        ("Whale Songs", "whale_songs"),
+        ("Wind Chimes", "wind_chimes"),
+        ("Thunderstorm", "thunderstorm"),
+        ("Bird Chirps", "bird_chirps"),
+        ("Fire Crackling", "fire_crackling"),
+        ("Wind Blowing", "wind_blowing"),
+        ("Calm River", "calm_river")
     ]
 
     var body: some View {
@@ -42,5 +48,3 @@ struct SoundSelectionView: View {
         .navigationBarHidden(true)
     }
 }
-
-
