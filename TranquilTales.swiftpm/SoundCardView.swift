@@ -39,4 +39,3 @@ struct SoundCardView: View {
         .padding(.horizontal)
     }
 }
-

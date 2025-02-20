@@ -1,18 +1,29 @@
 
-
 import SwiftUI
 import AVKit
 struct SlumberStoriesView: View {
     @State private var currentlyPlaying: String? = nil
     @StateObject private var audioPlayer = AudioPlayer()
     
+    // Shuffle the stories only once when the view is first created
     let stories = [
         ("The Night Forest", "forest", "night_forest"),
         ("Starry Sky Voyage", "starry_sky", "starry_sky"),
         ("Dreamy Castle", "castle", "dreamy_castle"),
         ("Magical Meadows", "meadow", "magical_meadow"),
-        ("Moonlit River", "river", "moonlit_river")
-    ]
+        ("Moonlit River", "river", "moonlit_river"),
+        ("Enchanted Waterfall", "waterfall", "enchanted_waterfall"),
+        ("Whispering Pines", "pines", "whispering_pines"),
+        ("Golden Sands", "beach", "golden_sands"),
+        ("Twilight Valley", "valley", "twilight_valley"),
+        ("Silent Desert", "desert", "silent_desert"),
+        ("Frosty Mountains", "mountains", "frosty_mountains"),
+        ("Aurora Dreams", "aurora", "aurora_dreams"),
+        ("Sapphire Lake", "lake", "sapphire_lake"),
+        ("Serene Garden", "garden", "serene_garden"),
+        ("Mystic Rainforest", "rainforest", "mystic_rainforest"),
+        ("Crystal Caverns", "cavern", "crystal_caverns")
+    ].shuffled() // Shuffle once here
     
     var body: some View {
         ZStack {
@@ -23,7 +34,8 @@ struct SlumberStoriesView: View {
                     .font(.largeTitle).foregroundColor(.white).bold().shadow(radius: 5)
                 
                 ScrollView {
-                    ForEach(stories.shuffled(), id: \.0) { story in
+                    // Remove `.shuffled()` from the ForEach
+                    ForEach(stories, id: \.0) { story in
                         StoryCardView(
                             title: story.0,
                             imageName: story.1,
@@ -40,10 +52,9 @@ struct SlumberStoriesView: View {
                         )
                     }
                 }
-            }.padding(.bottom, 20)
+            }
+            .padding(.bottom, 20)
         }
         .animation(.easeInOut) // Smooth transition animations for UI interactions
     }
 }
-
-

@@ -1,7 +1,7 @@
 
 import SwiftUI
 import Combine
-class DreamGuardianManager: ObservableObject {
+class SleepGuardianManager: ObservableObject {
     @Published var relaxationLevel: Int = 0
     private var relaxationTimer: Timer?
 

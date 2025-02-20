@@ -38,3 +38,8 @@ struct StoryCardView: View {
     }
 }
 
+struct StoryCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        StoryCardView(title: "Sample Story", imageName: "book", isPlaying: false, playAction: {})
+    }
+}
