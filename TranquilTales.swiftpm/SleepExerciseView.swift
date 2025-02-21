@@ -1,7 +1,7 @@
 
 import SwiftUI
 struct SleepExerciseView: View {
-    @Environment(\.presentationMode) var presentationMode // Add this to handle dismissing the view
+    @Environment(\.presentationMode) var presentationMode
     @State private var currentExercise: Int = 0
     @State private var progress: CGFloat = 0.0
     @State private var isBreathingIn = true
@@ -13,7 +13,6 @@ struct SleepExerciseView: View {
         ("Gentle Neck Stretch", "Slowly tilt your head to one side, then to the other side.", "person.circle"),
         ("Leg Raises", "Raise each leg slowly while lying on your back to relax.", "figure.walk")
     ]
-    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.purple.opacity(0.9)]), startPoint: .top, endPoint: .bottom)
@@ -66,10 +65,7 @@ struct SleepExerciseView: View {
                             .padding(.horizontal)
                     }
                 }
-
                 Spacer()
-                
-                // Button to continue exercises
                 if currentExercise < exercises.count - 1 {
                     Button(action: nextExercise) {
                         Text("Next Exercise")
@@ -108,8 +104,6 @@ struct SleepExerciseView: View {
             }
         }
     }
-
-    
     private func nextExercise() {
         timer?.invalidate()
         currentExercise += 1
@@ -121,10 +115,9 @@ struct SleepExerciseView: View {
         currentExercise = 0
         progress = 0.0
         isBreathingIn = true
-        presentationMode.wrappedValue.dismiss() // Dismiss the view when session ends
+        presentationMode.wrappedValue.dismiss() 
     }
 }
-
 struct SleepExerciseView_Previews: PreviewProvider {
     static var previews: some View {
         SleepExerciseView()
