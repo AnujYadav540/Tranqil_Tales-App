@@ -23,7 +23,7 @@ struct SlumberStoriesView: View {
         ("Serene Garden", "garden", "serene_garden"),
         ("Mystic Rainforest", "rainforest", "mystic_rainforest"),
         ("Crystal Caverns", "cavern", "crystal_caverns")
-    ].shuffled() // Shuffle once here
+    ].shuffled() 
     
     var body: some View {
         ZStack {
