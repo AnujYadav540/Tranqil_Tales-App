@@ -9,21 +9,17 @@ struct SleepGuardianView: View {
     
     var body: some View {
         ZStack {
-            // Background remains same (you can adjust this to your preference)
             LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.purple.opacity(0.7)]),
                            startPoint: .topLeading,
                            endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
             VStack(spacing: 30) {
-                // Title
                 Text("Sleep Guardian")
                     .font(.system(size: 36, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
                     .shadow(color: .black.opacity(0.4), radius: 6, x: 0, y: 4)
                     .padding(.top, 50)
-                
-                // Relaxation Timer Display
                 Text("Relaxation Timer: \(gameManager.relaxationLevel)")
                     .font(.title2)
                     .foregroundColor(.white.opacity(0.9))
@@ -31,8 +27,6 @@ struct SleepGuardianView: View {
                     .background(Color.black.opacity(0.3))
                     .cornerRadius(10)
                     .shadow(radius: 5)
-                
-                // Play/Pause Relaxation Button
                 Button(action: {
                     if isPaused {
                         gameManager.startOrResumeRelaxation()
@@ -58,8 +52,6 @@ struct SleepGuardianView: View {
                         dismissButton: .default(Text("Got it!"))
                     )
                 }
-                
-                // Start Sleep Exercise Button
                 Button(action: {
                     showSleepExercise = true
                 }) {

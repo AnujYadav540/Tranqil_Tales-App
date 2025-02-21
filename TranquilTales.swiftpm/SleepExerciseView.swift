@@ -26,8 +26,6 @@ struct SleepExerciseView: View {
                     .bold()
                     .shadow(radius: 5)
                     .padding(.top, 40)
-                
-                // Breathing Animation
                 ZStack {
                     Circle()
                         .stroke(lineWidth: 20)
@@ -93,7 +91,6 @@ struct SleepExerciseView: View {
         }
         .onAppear(perform: startBreathingAnimation)
     }
-
     private func startBreathingAnimation() {
         timer = Timer.scheduledTimer(withTimeInterval: 8.0, repeats: true) { _ in
             DispatchQueue.main.async {

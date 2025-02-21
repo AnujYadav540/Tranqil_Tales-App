@@ -6,7 +6,6 @@ struct SoundCardView: View {
     @Binding var selectedSound: String?
     @Binding var isPlaying: Bool
     @ObservedObject var audioPlayer: AudioPlayer
-    
     var body: some View {
         Button(action: {
             if selectedSound == soundFile {

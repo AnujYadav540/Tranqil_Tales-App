@@ -4,8 +4,6 @@ import AVKit
 struct SlumberStoriesView: View {
     @State private var currentlyPlaying: String? = nil
     @StateObject private var audioPlayer = AudioPlayer()
-    
-    // Shuffle the stories only once when the view is first created
     let stories = [
         ("The Night Forest", "forest", "night_forest"),
         ("Starry Sky Voyage", "starry_sky", "starry_sky"),
@@ -34,7 +32,6 @@ struct SlumberStoriesView: View {
                     .font(.largeTitle).foregroundColor(.white).bold().shadow(radius: 5)
                 
                 ScrollView {
-                    // Remove `.shuffled()` from the ForEach
                     ForEach(stories, id: \.0) { story in
                         StoryCardView(
                             title: story.0,
@@ -55,6 +52,6 @@ struct SlumberStoriesView: View {
             }
             .padding(.bottom, 20)
         }
-        .animation(.easeInOut) // Smooth transition animations for UI interactions
+        .animation(.easeInOut)
     }
 }
