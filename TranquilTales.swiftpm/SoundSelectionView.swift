@@ -19,7 +19,6 @@ struct SoundSelectionView: View {
         ("Wind Blowing", "wind_blowing"),
         ("Calm River", "calm_river")
     ]
-
     var body: some View {
         ZStack {
             BackgroundView()
@@ -31,8 +30,6 @@ struct SoundSelectionView: View {
                     .bold()
                     .shadow(radius: 5)
                     .padding(.top, 40)
-                
-                // Scrollable sound list
                 ScrollView {
                     VStack(spacing: 15) {
                         ForEach(soothingSounds, id: \.0) { sound in

@@ -5,7 +5,6 @@ struct StoryCardView: View {
     let imageName: String
     let isPlaying: Bool
     let playAction: () -> Void
-    
     var body: some View {
         Button(action: playAction) {
             HStack {
@@ -24,7 +23,6 @@ struct StoryCardView: View {
                     .bold()
                 
                 Spacer()
-                
                 Image(systemName: isPlaying ? "pause.circle.fill" : "play.circle.fill")
                     .resizable()
                     .frame(width: 30, height: 30)
@@ -37,7 +35,6 @@ struct StoryCardView: View {
         .padding(.horizontal)
     }
 }
-
 struct StoryCardView_Previews: PreviewProvider {
     static var previews: some View {
         StoryCardView(title: "Sample Story", imageName: "book", isPlaying: false, playAction: {})

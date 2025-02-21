@@ -1,6 +1,13 @@
 
 import SwiftUI
 struct ContentView: View {
+    init() {
+        let appearance = UITabBarAppearance()
+        appearance.backgroundColor = UIColor.white
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+        UITabBar.appearance().unselectedItemTintColor = UIColor.gray
+    }
     var body: some View {
         TabView {
             SlumberStoriesView()
@@ -10,7 +17,7 @@ struct ContentView: View {
             SleepGuardianView()
                 .tabItem { Label("Sleep Guardian", systemImage: "shield.fill") }
         }
-        .accentColor(.yellow) 
+        .accentColor(.yellow)
     }
 }
 struct ContentView_Previews: PreviewProvider {
